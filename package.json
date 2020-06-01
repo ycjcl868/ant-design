@@ -59,7 +59,7 @@
     "compile": "antd-tools run compile",
     "compile:less": "antd-tools run compile:less",
     "changelog": "node ./scripts/print-changelog",
-    "predeploy": "antd-tools run clean && npm run site && cp CNAME _site && cp -r .circleci/ .github/ _site && npm run site:test",
+    "predeploy": "antd-tools run clean && npm run site && cp CNAME _site && cp -r .circleci/ .github/ _site",
     "deploy": "bisheng gh-pages --push-only --dotfiles",
     "deploy:china-mirror": "git checkout gh-pages && git pull origin gh-pages && git push git@gitee.com:ant-design/ant-design.git gh-pages",
     "dist": "antd-tools run dist",
@@ -88,7 +88,6 @@
     "test-all": "./scripts/test-all.sh",
     "test-node": "jest --config .jest.node.js --no-cache",
     "tsc": "tsc --noEmit",
-    "site:test": "jest --config .jest.site.js --cache=false",
     "test-image": "npm run compile:less && docker-compose run tests",
     "version": "node ./scripts/generate-version"
   },
